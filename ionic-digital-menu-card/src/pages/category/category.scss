@@ -1,0 +1,15 @@
+page-category {
+
+}
+
+.category
+{
+    background: color($colors, "theme");
+    color: white;
+    border-bottom: 1px solid color($colors, "light-theme");
+    font-size: 12px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    border-radius: 8px;
+}

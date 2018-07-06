@@ -1,0 +1,17 @@
+page-dashboard {
+    
+}
+
+.title
+{
+    color: color($colors, "theme");
+}
+
+.dashboardItem
+{
+    color: color($colors, "theme");
+    border-bottom: 1px solid color($colors, "light-theme");
+    font-size: 22px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
