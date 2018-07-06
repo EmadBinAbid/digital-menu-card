@@ -8,7 +8,8 @@
 const server = require('./server');
 const connection = require('./connection.mongoose');
 const authentication = require('./authentication.mongoose');
-const userRouter = require('./models/user-model/user.router');
+const adminRouter = require('./models/admin-model/admin.router');
+const itemRouter = require('./models/item-model/item.router');
 
     //npm dependencies
 const express = require('express');
@@ -25,8 +26,13 @@ userRouter.createRoutes(app, jwt, authentication.verifyToken);
 app.use(express.json());    //To parse json objects sent by the client.
 app.use(cors());            //To resolve cross-origin browser issues.
 
-//Validating the user on Login
-authentication.validateUser(app, jwt);
+//Creating routes
+adminRouter.createRoutes(app, jwt, authentication.verifyToken);
+itemRouter.createRoutes(app, jwt, authentication.verifyToken);
+
+
+//Validating the admin on Login
+authentication.validateAdmin(app, jwt);
 
 //Running the server
 server.run(app, 3000);
